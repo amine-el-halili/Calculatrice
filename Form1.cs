@@ -1,6 +1,6 @@
 namespace Calculatrice
 {
-    public partial class Form1 : Form
+    public partial class MyCalculater : Form
     {
         private Boolean isNewInput = true;
         private Boolean isOperation = false;
@@ -8,6 +8,14 @@ namespace Calculatrice
         private String operand1 = "";
         private String operand2;
         private int result;
+
+        private void next(char op)
+        {
+            operand2 = lblInput.Text;
+            result = calcul(operand1, operand2, operator1);
+            operator1 = op;
+            operand1 = result.ToString();
+        }
 
         private int calcul(String a, String b, Char op)
         {
@@ -25,7 +33,7 @@ namespace Calculatrice
                     return 0;
             }
         }
-        public Form1()
+        public MyCalculater()
         {
             InitializeComponent();
         }
@@ -79,14 +87,7 @@ namespace Calculatrice
                 operand1 = lblInput.Text;
                 operator1 = '+';
             }
-            else
-            {
-                operand2 = lblInput.Text;
-                result = calcul(operand1, operand2, operator1);
-                operator1 = '+';
-                operand1 = result.ToString();
-
-            }
+            else next('+');
 
 
             lblOperation.Text = operand1 + " + ";
@@ -241,14 +242,7 @@ namespace Calculatrice
                 operand1 = lblInput.Text;
                 operator1 = '-';
             }
-            else
-            {
-                operand2 = lblInput.Text;
-                result = calcul(operand1, operand2, operator1);
-                operator1 = '-';
-                operand1 = result.ToString();
-
-            }
+            else next('-');
 
 
             lblOperation.Text = operand1 + " - ";
@@ -263,14 +257,7 @@ namespace Calculatrice
                 operand1 = lblInput.Text;
                 operator1 = '*';
             }
-            else
-            {
-                operand2 = lblInput.Text;
-                result = calcul(operand1, operand2, operator1);
-                operator1 = '*';
-                operand1 = result.ToString();
-
-            }
+            else next('*');
 
             lblOperation.Text = operand1 + " * ";
             lblInput.Text = operand1;
@@ -284,15 +271,7 @@ namespace Calculatrice
                 operand1 = lblInput.Text;
                 operator1 = '/';
             }
-
-            else
-            {
-                operand2 = lblInput.Text;
-                result = calcul(operand1, operand2, operator1);
-                operator1 = '/';
-                operand1 = result.ToString();
-
-            }
+            else next('/');
 
 
             lblOperation.Text = operand1 + " / ";
