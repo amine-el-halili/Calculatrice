@@ -33,6 +33,18 @@ namespace Calculatrice
                     return 0;
             }
         }
+        private void btnNumberClick(int number)
+        {
+            if (isNewInput)
+            {
+                lblInput.Text = number.ToString();
+                isNewInput = false;
+            }
+            else
+            {
+                lblInput.Text += number.ToString();
+            }
+        }
         public MyCalculater()
         {
             InitializeComponent();
@@ -110,119 +122,47 @@ namespace Calculatrice
 
         private void btnOne_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "1";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "1";
-            }
+            btnNumberClick(1);
         }
 
         private void btnTwo_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "2";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "2";
-            }
+            btnNumberClick(2);
         }
 
         private void btnThree_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "3";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "3";
-            }
+            btnNumberClick(3);
         }
 
         private void btnFour_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "4";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "4";
-            }
+            btnNumberClick(4);
         }
 
         private void btnFive_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "5";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "5";
-            }
+            btnNumberClick(5);
         }
 
         private void btnSix_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "6";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "6";
-            }
+            btnNumberClick(6);
         }
 
         private void btnSeven_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "7";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "7";
-            }
+            btnNumberClick(7);
         }
 
         private void btnEight_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "8";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "8";
-            }
+            btnNumberClick(8);
         }
 
         private void btnNine_Click(object sender, EventArgs e)
         {
-            if (isNewInput)
-            {
-                lblInput.Text = "9";
-                isNewInput = false;
-            }
-            else
-            {
-                lblInput.Text += "9";
-            }
+            btnNumberClick(9);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
